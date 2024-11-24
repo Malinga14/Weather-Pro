@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Pro</title>
+
+</head>
+
+<body>
+
+    <!------------------------------- Navbar ------------------------------->
+
+    <nav class="navbar navbar-expand-lg bg-dark" id="navbar">
+        <div class="container-fluid">
+            <h1 class="navbar-brand col-md-10 mb-3 mb-md-0" id="nav-brand">Weather Pro</h1>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-1 justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-txt" routerLink="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-txt" routerLink="papers">Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-txt">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--------------------------------- Background Video ---------------------------------->
+
+    <!-- <div class="col-12" id="video-comp">
+        <div class="row justify-content-center align-items-center vh-100">
+            <video autoplay loop muted plays-inline class="bg-video">
+                <source src="video/blue color drop.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div> -->
+
+    <br><br>
+
+
+    <!----------------------------------Image 360 section------------------------------------>
+
+    <div class="banner position-absolute text-center w-100">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/New York.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">New York</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="newYorkTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="newYorkTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 2">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/London.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">London</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="londonTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="londonTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 3">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/Japan.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Tokyo</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="tokyoTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="tokyoTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 4">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/France.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="parisTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="parisTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 5">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/China.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Beijing</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="beijingTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="beijingTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 6">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/Dubai.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Dubai</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="dubaiTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="dubaiTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 7">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/Sydney.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Sydney</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="sydneyTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="sydneyTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 8">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/India.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Mumbai</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="mumbaiTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="mumbaiTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 9">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/Italy.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Rome</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="romeTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="romeTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="--position: 10">
+                <div class="card" style="width: 8rem;">
+                    <img src="img/Brazil.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">São Paulo</h5>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="saoPauloTitleTempC"></h3>
+                            </div>
+                        </div>
+                        <div class="row"><br></div>
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="saoPauloTempC"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+    <link rel="stylesheet" href="app.js">
+</body>
+
+</html>
