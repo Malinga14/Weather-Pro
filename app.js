@@ -1,78 +1,88 @@
-function load() {
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$london&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("tempUk").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windUk").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
-        })
+load();
 
+function load() {
+    //---------------------------------------New York-----------------------------------------------------
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempUsa").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windUsa").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("newYorkTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("newYorWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------london-----------------------------------------------------
+    fetch(`http://api.weatherapi.com/v1/current.json?key=255d202456604fcb823191822242311&q=London&aqi=no`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("londonTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("londonWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------Tokyo-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("tokyoTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("tokyoWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------Paris-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("parisTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("parisWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------Beijing-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("beiginTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("beigingWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------Dubai-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("dubaiTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("dubaiWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+
+    //---------------------------------------Sydney-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("sydneyTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("sydneyWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+    //---------------------------------------Mumbai-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("mumbaiTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("mumbaiWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
 
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+
+    //---------------------------------------Rome-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("romeTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("romeWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$sydney&days=7`)
+
+    //---------------------------------------Sao Paulo-----------------------------------------------------
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("tempAus").innerHTML = "Temp : " + data.current.temp_c + "°C / " + data.current.temp_f + "°F";
-            document.getElementById("windAus").innerHTML = "Wind : " + data.current.wind_kph + " kmph / " + data.current.wind_mph + " mph";
+            document.getElementById("australiaTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
+            document.getElementById("austrailaWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
         })
+
+
 
 }
