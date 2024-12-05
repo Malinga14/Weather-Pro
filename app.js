@@ -1,88 +1,92 @@
 load();
+const API_URL = "http://api.openweathermap.org/geo/1.0/direct";
+const API_KEY = "3bd30b42dbce1f32d597d94dd8482394";
+
+async function getCityData(cityName) {
+  try {
+    const url = `${API_URL}?q=${cityName}&limit=5&appid=${API_KEY}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    console.log("City Data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching city data:", error);
+  }
+}
+getCityData(document.getElementById(searchBar));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function load() {
-    //---------------------------------------New York-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("newYorkTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("newYorWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
+    const locations = [
+        { id: "newYork", name: "New York" },
+        { id: "london", name: "London" },
+        { id: "tokyo", name: "Tokyo" },
+        { id: "paris", name: "Paris" },
+        { id: "beijing", name: "Beijing" },
+        { id: "dubai", name: "Dubai" },
+        { id: "sydney", name: "Sydney" },
+        { id: "mumbai", name: "Mumbai" },
+        { id: "rome", name: "Rome" },
+        { id: "saoPaulo", name: "Sao Paulo" }
+    ];
 
-    //---------------------------------------london-----------------------------------------------------
-    fetch(`http://api.weatherapi.com/v1/current.json?key=255d202456604fcb823191822242311&q=London&aqi=no`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("londonTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("londonWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
+    
 
-    //---------------------------------------Tokyo-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("tokyoTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("tokyoWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
+    locations.forEach(location => {
+        const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location.name}`;
 
-    //---------------------------------------Paris-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("parisTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("parisWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-    //---------------------------------------Beijing-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("beijingTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("beijingWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-    //---------------------------------------Dubai-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("dubaiTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("dubaiWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-
-    //---------------------------------------Sydney-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("sydneyTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("sydneyWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-    //---------------------------------------Mumbai-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("mumbaiTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("mumbaiWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-
-    //---------------------------------------Rome-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("romeTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("romeWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-    //---------------------------------------Sao Paulo-----------------------------------------------------
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=00c32db79d684476a03182846240909&q=$New York&days=7`)
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("saoPauloTempC").innerHTML = "Temp:" + data.current.temp_c + "°C";
-            document.getElementById("saoPauloWind").innerHTML = "Wind : " + data.current.wind_kph + " kmph";
-        })
-
-
-
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById(`${location.id}TempC`).innerHTML = 
+                    "Temp: " + data.current.temp_c + "°C";
+                document.getElementById(`${location.id}Wind`).innerHTML = 
+                    "Wind: " + data.current.wind_kph + " kmph";
+            })
+            .catch(err => {
+                console.error("Failed to fetch weather data for " + location.name, err);
+                document.getElementById(`${location.id}TempC`).innerHTML = "Error loading data";
+                document.getElementById(`${location.id}Wind`).innerHTML = "Hello";
+            });
+    });
 }
+
+

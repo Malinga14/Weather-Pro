@@ -1,37 +1,123 @@
-
-/*------------------------- Navbar -------------------------*/
-
-#nav-txt{
-    color: aliceblue;
-    transition: transform 0.3s ease;
+body{
+    background: #0b111d;
 }
 
-#nav-txt:hover{
-    transform: scale(1.2); 
+/*------------------------- Headder -------------------------*/
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+
+#searchBar{
+    border-radius: 30px;
+    width: 100%;
 }
 
-#nav-brand{
-    font-weight: bolder;
-    font-size: xx-large;
-    color: aliceblue;
-    align-self: Left;
+/*------------------------- searchbar ---------------------------*/
+
+#search{
+    color: white;
+    background-color: transparent;
+    border-color: aquamarine;
+    width: 40%;
 }
 
-#home{
-    color: aliceblue;
+#search-icon{
+    color: white;
+    font-weight: bold;
+}
+
+#searchbar{
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 3%;
+    -webkit-text-fill-color: #fff;
 }
 
 
 /*------------------------- Image 360 section ----------------------*/
 
-.banner{
+.container-fluid{
     width: 100%;
     height: 100vh;
     text-align: center;
     overflow: hidden;
     position: relative;
 }
-.banner .slider{
+.container-fluid .slider{
     position: absolute;
     width: 200px;
     height: 250px;
@@ -39,7 +125,7 @@
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    animation: autoRun 40s linear infinite;
+    animation: autoRun 80s linear infinite;
     z-index: 2;
 }
 @keyframes autoRun{
@@ -50,19 +136,19 @@
     }
 }
 
-.banner .slider .item{
+.container-fluid .slider .item{
     position: absolute;
     inset: 0 0 0 0;
     transform: 
         rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
         translateZ(550px);
 }
-.banner .slider .item img{
+.container-fluid .slider .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.banner .content{
+.container-fluid .content{
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -76,14 +162,14 @@
     align-items: center;
     z-index: 1;
 }
-.banner .content h1{
+.container-fluid .content h1{
     font-family: 'ICA Rubrik';
     font-size: 16em;
     line-height: 1em;
     color: #25283B;
     position: relative;
 }
-.banner .content h1::after{
+.container-fluid .content h1::after{
     position: absolute;
     inset: 0 0 0 0;
     content: attr(data-content);
@@ -91,33 +177,33 @@
     -webkit-text-stroke: 2px #d2d2d2;
     color: transparent;
 }
-.banner .content .author{
+.container-fluid .content .author{
     font-family: Poppins;
     text-align: right;
     max-width: 200px;
 }
-.banner .content h2{
+.container-fluid .content h2{
     font-size: 3em;
 }
 
 @media screen and (max-width: 1023px) {
-    .banner .slider{
+    .container-fluid .slider{
         width: 160px;
         height: 200px;
         left: calc(50% - 80px);
     }
-    .banner .slider .item{
+    .container-fluid .slider .item{
         transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 2deg))
             translateZ(300px);
     }
-    .banner .content h1{
+    .container-fluid .content h1{
         text-align: center;
         width: 100%;
         text-shadow: 0 10px 20px #000;
         font-size: 7em;
     }
-    .banner .content .author{
+    .container-fluid .content .author{
         color: #fff;
         padding: 20px;
         text-shadow: 0 10px 20px #000;
@@ -129,19 +215,116 @@
     }
 }
 @media screen and (max-width: 767px) {
-    .banner .slider{
+    .container-fluid .slider{
         width: 100px;
         height: 150px;
         left: calc(50% - 50px);
     }
-    .banner .slider .item{
+    .container-fluid .slider .item{
         transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 2deg))
             translateZ(180px);
     }
-    .banner .content h1{
+    .container-fluid .content h1{
         font-size: 5em;
     }
 }
 
+.card-body{
+    color: white;
+}
 
+/*-------------------------------- Dashboard --------------------------------*/
+
+#map{
+    height: 300px;
+    width: 400px;
+    border-radius: 50px;
+    background: transparent;    
+}
+
+#card-map{
+    background: #202c3c;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 16px 0px rgba(44, 44, 44, 0.5);
+}
+
+#card-weather-forecast{
+    height: 300px;
+    width: 500px;
+    border-radius: 50px;
+    background: #202c3c;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 16px 0px rgba(44, 44, 44, 0.5);
+}
+
+#card-weather-prediction{
+    height: 300px;
+    width: 1080px;
+    border-radius: 50px;
+    background: #202c3c;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 16px 0px rgba(44, 44, 44, 0.5);
+    margin-bottom: 15px;
+}
+
+#card-week-prediction{
+    height: 615px;
+    width: 300px;
+    border-radius: 50px;
+    background: #202c3c;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 16px 0px rgba(44, 44, 44, 0.5);
+}
+
+#currentCityData{
+    text-align: left;
+}
+
+#currentCityWeather{
+    text-align: left;
+}
+
+
+#location{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#country{
+    font-size: large;
+}
+
+hr{
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*------------------------- Fotter -------------------------*/
+
+#socialMedia{
+    font-weight: bold;
+    font-size: 2rem;
+}
